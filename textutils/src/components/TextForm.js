@@ -13,23 +13,28 @@ export default function TextForm(props) {
                 backgroundColor: "black"
             });
             setButtonText("Enable Light Mode");
+            props.showAlert("Dark mode for text form enabled", "success");
         }else{
             setMyStyle({
                 color: "black",
                 backgroundColor: "white"
             })
             setButtonText("Enable Dark Mode");
+            props.showAlert("Light mode for text form enabled", "success");
+
         }
     }
     const handelUpperCase = () =>{
         //console.log("Please change me " + text);
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Converted to UpperCase", "success");
     }
     const handelLowerCase = () =>{
         //console.log("Please change me " + text);
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert("Converted to LowerCase", "success");
     }
     const handleOnChange = (event) =>{
         //console.log("On change");
@@ -38,26 +43,31 @@ export default function TextForm(props) {
     const handelEmail = ()=>{
         let name = text.split("@")
         setText(name[0]);
+        props.showAlert("Name Extracted from E-mail", "success");
     }
     const clearText = ()=>{
         let newText = "";
         setText(newText);
+        props.showAlert("Textarea cleared", "success");
     }
     const handelTitleCase = ()=>{
         let newText = text.toLowerCase().split(" ").map((word)=>{
             return (word.charAt(0).toUpperCase()+ word.slice(1));
         }).join(" ");
         setText(newText);
+        props.showAlert("Entered text is converted to Title case", "success");
     }
    
     const handelCopyText = ()=>{
         let copyText = document.getElementById("myBox")
         copyText.select();
         navigator.clipboard.writeText(copyText.value);
+        props.showAlert("text Copied", "success");
     }
     const handelExtraSpaces = ()=>{
         let spacedText = text.replace(/\s+/g," ");
         setText(spacedText);
+        props.showAlert("Extra spaces removed", "success");
     }
     const [text, setText] = useState("");
     // text="New Text" This is wrong way to change a state value
