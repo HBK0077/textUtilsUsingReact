@@ -21,7 +21,7 @@ function App() {
     },2000);
   }
 
-  const toggleMode = ()=>{
+  const toggleDarkMode = ()=>{
     if(mode === "light"){
       setMode("dark");
       document.body.style.backgroundColor = "black";
@@ -32,9 +32,31 @@ function App() {
       showAlert("Light mode has been enabled", "success");
     }
   }
+  const toggleBlueMode = () =>{
+    if(mode === "light"){
+      setMode("blue");
+      document.body.style.backgroundColor = "blue";
+      showAlert("Blue mode enabled", "success");
+    }else{
+      setMode("light");
+      document.body.style.backgroundColor = "white";
+      showAlert("Light mode has been enabled", "success");
+    }
+  }
+  const toggleRedMode = ()=>{
+    if(mode === "light"){
+      setMode("red");
+      document.body.style.backgroundColor = "red";
+      showAlert("Blue mode enabled", "success");
+    }else{
+      setMode("light");
+      document.body.style.backgroundColor = "white";
+      showAlert("Light mode has been enabled", "success");
+    }
+  }
   return (
     <>
-      <Navbar title="TextUtils" aboutUs="About" home="Home" mode={mode} toggleMode = {toggleMode}></Navbar>
+      <Navbar title="TextUtils" aboutUs="About" home="Home" mode={mode} toggleDarkMode = {toggleDarkMode} toggleRedMode = {toggleRedMode} toggleBlueMode = {toggleBlueMode}></Navbar>
       <Alert alert={alert}></Alert>
       <div className="container my-3">
         <TextForm showAlert={showAlert}heading="Enter the text to analyze"></TextForm>

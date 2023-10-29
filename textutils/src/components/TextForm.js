@@ -72,6 +72,11 @@ export default function TextForm(props) {
     const [text, setText] = useState("");
     // text="New Text" This is wrong way to change a state value
     // setText("new Text"); Correct way to change a state value
+
+    const spaceHandling = (text)=>{
+        const arr = text.split(" ");
+        return arr.filter(word => word !== "").length;
+    }
     return (
         <>
             <div style={myStyle}>
@@ -94,8 +99,8 @@ export default function TextForm(props) {
                 </div>
                 <div className="container my-2">
                     <h2>Your text Summary</h2>
-                    <p><b>{text.split(" ").length} words and {text.length} characters</b></p>
-                    <p><b>{0.008 * text.split(" ").length} minutes to read</b></p>
+                    <p><b>{spaceHandling(text)} words and {text.length} characters</b></p>
+                    {/* <p><b>{0.008 * text.split(" ").length} minutes to read</b></p> */}
                 </div>
             </div>
             
