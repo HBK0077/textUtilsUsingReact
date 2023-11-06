@@ -1,28 +1,36 @@
 import React, {useState} from 'react'
 
 export default function TextForm(props) {
-    const [myStyle, setMyStyle] = useState({
-        color: "black",
-        backgroundColor: "white"
-    });
-    const [buttonText, setButtonText] = useState("Enable Dark Mode");
-    const toggleStyle = ()=>{
-        if(myStyle.color === "black"){
-            setMyStyle({
-                color: "white",
-                backgroundColor: "black"
-            });
-            setButtonText("Enable Light Mode");
-            props.showAlert("Dark mode for text form enabled", "success");
-        }else{
-            setMyStyle({
-                color: "black",
-                backgroundColor: "white"
-            })
-            setButtonText("Enable Dark Mode");
-            props.showAlert("Light mode for text form enabled", "success");
+    //NOTE: This darkMode enable is while enabling using the text form button.
 
-        }
+    // const [myStyle, setMyStyle] = useState({
+    //     color: "black",
+    //     backgroundColor: "white"
+    // });
+    // const [buttonText, setButtonText] = useState("Enable Dark Mode");
+    // const toggleStyle = ()=>{
+    //     if(myStyle.color === "black"){
+    //         setMyStyle({
+    //             color: "white",
+    //             backgroundColor: "black"
+    //         });
+    //         setButtonText("Enable Light Mode");
+    //         props.showAlert("Dark mode for text form enabled", "success");
+    //     }else{
+    //         setMyStyle({
+    //             color: "black",
+    //             backgroundColor: "white"
+    //         })
+    //         setButtonText("Enable Dark Mode");
+    //         props.showAlert("Light mode for text form enabled", "success");
+
+    //     }
+    // }
+
+    //NOTE: this darkMode enable button while enabling tha dark mode in NavBar.
+    let myStyle = {
+        color: props.mode === "dark"?"white":"black",
+        backgroundColor: props.mode === "dark"?"black": "white"
     }
     const handelUpperCase = () =>{
         //console.log("Please change me " + text);
@@ -86,13 +94,13 @@ export default function TextForm(props) {
                         <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
                     </div>
 
-                    <button className="btn btn-primary mx-1" onClick={toggleStyle}>{buttonText}</button>
-                    <button className="btn btn-primary mx-1" onClick={handelUpperCase}>Convert to UpperCase</button>
-                    <button className="btn btn-primary mx-1" onClick={handelLowerCase}>Convert to LowerCase</button>
-                    <button className="btn btn-primary mx-1" onClick={handelEmail}>Extract name from Email</button>
-                    <button className="btn btn-primary mx-1" onClick={clearText}>Clear Text</button>
-                    <button className="btn btn-primary mx-1" onClick={handelTitleCase}>Convert to TitleCase</button>
-                    <button className="btn btn-primary my-2" onClick={handelCopyText}>Copy Text</button>
+                    {/* <button className="btn btn-primary mx-1 my-1" onClick={toggleStyle}>{buttonText}</button> */}
+                    <button className="btn btn-primary mx-1 my-1" onClick={handelUpperCase}>Convert to UpperCase</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={handelLowerCase}>Convert to LowerCase</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={handelEmail}>Extract name from Email</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={clearText}>Clear Text</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={handelTitleCase}>Convert to TitleCase</button>
+                    <button className="btn btn-primary my-2 my-1" onClick={handelCopyText}>Copy Text</button>
                     <button className="btn btn-primary mx-1 my-2" onClick={handelExtraSpaces}>Remove Extra Spaces</button>
 
                                         
