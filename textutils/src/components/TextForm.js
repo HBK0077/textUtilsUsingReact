@@ -95,13 +95,13 @@ export default function TextForm(props) {
                     </div>
 
                     {/* <button className="btn btn-primary mx-1 my-1" onClick={toggleStyle}>{buttonText}</button> */}
-                    <button className="btn btn-primary mx-1 my-1" onClick={handelUpperCase}>Convert to UpperCase</button>
-                    <button className="btn btn-primary mx-1 my-1" onClick={handelLowerCase}>Convert to LowerCase</button>
-                    <button className="btn btn-primary mx-1 my-1" onClick={handelEmail}>Extract name from Email</button>
-                    <button className="btn btn-primary mx-1 my-1" onClick={clearText}>Clear Text</button>
-                    <button className="btn btn-primary mx-1 my-1" onClick={handelTitleCase}>Convert to TitleCase</button>
-                    <button className="btn btn-primary my-2 my-1" onClick={handelCopyText}>Copy Text</button>
-                    <button className="btn btn-primary mx-1 my-2" onClick={handelExtraSpaces}>Remove Extra Spaces</button>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handelUpperCase}>Convert to UpperCase</button>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handelLowerCase}>Convert to LowerCase</button>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handelEmail}>Extract name from Email</button>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={clearText}>Clear Text</button>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handelTitleCase}>Convert to TitleCase</button>
+                    <button disabled={text.length === 0} className="btn btn-primary my-2 my-1" onClick={handelCopyText}>Copy Text</button>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-1 my-2" onClick={handelExtraSpaces}>Remove Extra Spaces</button>
 
                                         
                 </div>
