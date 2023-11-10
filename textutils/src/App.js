@@ -42,50 +42,14 @@ function App() {
       document.body.style.backgroundColor = "black";
       showAlert("Dark mode has been enabled", "success");
     }
-    // else if(mode === "blue"){
-    //   setMode("dark");
-    //   document.body.style.backgroundColor = "black";
-    //   showAlert("Dark mode has been enabled", "success");
-    // }
+    
     else{
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light mode has been enabled", "success");
     }
   }
-  // const toggleBlueMode = () =>{
-  //   if(mode === "light"){
-  //     setMode("blue");
-  //     document.body.style.backgroundColor = "blue";
-  //     showAlert("Blue mode enabled", "success");
-  //   }else if(mode === "dark"){
-  //     setMode("blue");
-  //     document.body.style.backgroundColor = "blue";
-  //     showAlert("Blue mode enabled", "success");
-  //   }else{
-  //     if(setMode === "dark"){
-  //       setMode("dark");
-  //       document.body.style.backgroundColor = "black";
-  //       showAlert("Dark mode has been enabled", "success");
-  //     }else{
-  //       setMode("light");
-  //       document.body.style.backgroundColor = "white";
-  //       showAlert("Light mode has been enabled", "success");
-  //     }
-      
-  //   }
-  // }
-  // const toggleRedMode = ()=>{
-  //   if(mode === "light"){
-  //     setMode("red");
-  //     document.body.style.backgroundColor = "red";
-  //     showAlert("Blue mode enabled", "success");
-  //   }else{
-  //     setMode("light");
-  //     document.body.style.backgroundColor = "white";
-  //     showAlert("Light mode has been enabled", "success");
-  //   }
-  // }
+  
   return (
     <>
       <Router>

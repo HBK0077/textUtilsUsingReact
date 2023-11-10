@@ -82,7 +82,7 @@ export default function TextForm(props) {
     // setText("new Text"); Correct way to change a state value
 
     const spaceHandling = (text)=>{
-        const arr = text.split(" ");
+        const arr = text.split(/\s+/);
         return arr.filter(word => word !== "").length;
     }
     return (
